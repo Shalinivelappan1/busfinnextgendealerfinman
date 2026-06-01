@@ -419,6 +419,8 @@ menu = st.sidebar.radio(
         "NextGen Leadership",
 
         "Business Decision Challenge",
+        
+        "Dealer Reflection & Financial Scorecard",
 
         "Action Plan Generator"
 
@@ -1539,6 +1541,251 @@ Financially conservative approach.
         )
 
     tamil_insight("decision")
+
+
+# =========================================================
+# DEALER REFLECTION & FINANCIAL SCORECARD
+# =========================================================
+
+elif menu == "Dealer Reflection & Financial Scorecard":
+
+    st.header("📊 Dealer Reflection & Financial Scorecard")
+
+    st.markdown("""
+This section summarizes:
+- working capital efficiency
+- profitability
+- liquidity
+- leadership readiness
+- business improvement areas
+""")
+
+    # =====================================================
+    # INPUTS
+    # =====================================================
+
+    annual_sales = st.number_input(
+        "Annual Sales",
+        value=60000000.0
+    )
+
+    annual_profit = st.number_input(
+        "Annual Profit",
+        value=6000000.0
+    )
+
+    receivables = st.number_input(
+        "Receivables",
+        value=5000000.0
+    )
+
+    inventory = st.number_input(
+        "Inventory",
+        value=7000000.0
+    )
+
+    payables = st.number_input(
+        "Payables",
+        value=4000000.0
+    )
+
+    cogs = st.number_input(
+        "Annual Cost of Goods Sold",
+        value=45000000.0
+    )
+
+    operating_expenses = st.number_input(
+        "Operating Expenses",
+        value=8000000.0
+    )
+
+    # =====================================================
+    # RATIO CALCULATIONS
+    # =====================================================
+
+    profit_margin = (
+        annual_profit / annual_sales
+    ) * 100
+
+    expense_ratio = (
+        operating_expenses / annual_sales
+    ) * 100
+
+    receivable_days = (
+        receivables / annual_sales
+    ) * 365
+
+    inventory_days = (
+        inventory / cogs
+    ) * 365
+
+    payable_days = (
+        payables / cogs
+    ) * 365
+
+    cash_conversion_cycle = (
+        receivable_days +
+        inventory_days -
+        payable_days
+    )
+
+    # =====================================================
+    # METRICS
+    # =====================================================
+
+    st.subheader("📈 Key Financial Ratios")
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric(
+        "Profit Margin",
+        f"{profit_margin:.2f}%"
+    )
+
+    col2.metric(
+        "Expense Ratio",
+        f"{expense_ratio:.2f}%"
+    )
+
+    col3.metric(
+        "Receivable Days",
+        f"{receivable_days:.1f}"
+    )
+
+    col4, col5, col6 = st.columns(3)
+
+    col4.metric(
+        "Inventory Days",
+        f"{inventory_days:.1f}"
+    )
+
+    col5.metric(
+        "Payable Days",
+        f"{payable_days:.1f}"
+    )
+
+    col6.metric(
+        "Cash Conversion Cycle",
+        f"{cash_conversion_cycle:.1f}"
+    )
+
+    # =====================================================
+    # VISUALIZATION
+    # =====================================================
+
+    ratio_df = pd.DataFrame({
+
+        "Ratio": [
+
+            "Profit Margin",
+            "Expense Ratio",
+            "Receivable Days",
+            "Inventory Days",
+            "Payable Days",
+            "Cash Conversion Cycle"
+
+        ],
+
+        "Value": [
+
+            profit_margin,
+            expense_ratio,
+            receivable_days,
+            inventory_days,
+            payable_days,
+            cash_conversion_cycle
+
+        ]
+
+    })
+
+    fig = px.bar(
+
+        ratio_df,
+
+        x="Ratio",
+
+        y="Value",
+
+        title="Dealer Financial Scorecard"
+
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    # =====================================================
+    # INTERPRETATION
+    # =====================================================
+
+    st.subheader("🧠 Financial Interpretation")
+
+    if cash_conversion_cycle > 120:
+
+        st.error("""
+🔴 Cash is getting blocked too long in operations.
+""")
+
+    elif cash_conversion_cycle > 60:
+
+        st.warning("""
+🟠 Moderate working capital pressure exists.
+""")
+
+    else:
+
+        st.success("""
+🟢 Healthy working capital management.
+""")
+
+    if profit_margin < 5:
+
+        st.warning("""
+Low profitability detected.
+Review discounts and operating costs.
+""")
+
+    # =====================================================
+    # DEALER REFLECTION
+    # =====================================================
+
+    st.subheader("📝 Dealer Reflection")
+
+    st.text_area(
+        "What is your biggest business challenge?"
+    )
+
+    st.text_area(
+        "Which area needs immediate improvement?"
+    )
+
+    st.text_area(
+        "What digital initiative can improve your dealership?"
+    )
+
+    st.text_area(
+        "What leadership capability do you want to strengthen?"
+    )
+
+    # =====================================================
+    # TAMIL LEARNING INSIGHT
+    # =====================================================
+
+    tamil_insight("leadership")
+
+    # =====================================================
+    # FINAL MESSAGE
+    # =====================================================
+
+    st.success("""
+Strong dealerships are built through:
+- disciplined finance
+- strong systems
+- customer trust
+- leadership mindset
+""")
 
 
 # =========================================================
