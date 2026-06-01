@@ -1715,6 +1715,187 @@ This section summarizes:
         fig,
         use_container_width=True
     )
+        
+    # =====================================================
+    # FORMULA EXPLANATION
+    # =====================================================
+    
+    st.subheader("📘 How These Ratios Are Calculated")
+    
+    # -----------------------------------------------------
+    # PROFIT MARGIN
+    # -----------------------------------------------------
+    
+    with st.expander("Profit Margin Formula"):
+    
+        st.latex(r'''
+        \text{Profit Margin} =
+        \left(
+        \frac{\text{Annual Profit}}
+        {\text{Annual Sales}}
+        \right) \times 100
+        ''')
+    
+        st.markdown(f"""
+    
+    ### Example Calculation
+    
+    Profit Margin = ({annual_profit:,.0f} ÷ {annual_sales:,.0f}) × 100
+    
+    = {profit_margin:.2f}%
+    
+    💡 Learning:
+    This shows how much profit is generated
+    for every rupee of sales.
+    
+    """)
+    
+    # -----------------------------------------------------
+    # EXPENSE RATIO
+    # -----------------------------------------------------
+    
+    with st.expander("Expense Ratio Formula"):
+    
+        st.latex(r'''
+        \text{Expense Ratio} =
+        \left(
+        \frac{\text{Operating Expenses}}
+        {\text{Annual Sales}}
+        \right) \times 100
+        ''')
+    
+        st.markdown(f"""
+    
+    ### Example Calculation
+    
+    Expense Ratio = ({operating_expenses:,.0f} ÷ {annual_sales:,.0f}) × 100
+    
+    = {expense_ratio:.2f}%
+    
+    💡 Learning:
+    This measures how much of sales revenue
+    is consumed by operating expenses.
+    
+    """)
+    
+    # -----------------------------------------------------
+    # RECEIVABLE DAYS
+    # -----------------------------------------------------
+    
+    with st.expander("Receivable Days Formula"):
+    
+        st.latex(r'''
+        \text{Receivable Days} =
+        \left(
+        \frac{\text{Receivables}}
+        {\text{Annual Sales}}
+        \right) \times 365
+        ''')
+    
+        st.markdown(f"""
+    
+    ### Example Calculation
+    
+    Receivable Days = ({receivables:,.0f} ÷ {annual_sales:,.0f}) × 365
+    
+    = {receivable_days:.1f} days
+    
+    💡 Learning:
+    This shows how long customers take
+    to make payment.
+    
+    """)
+    
+    # -----------------------------------------------------
+    # INVENTORY DAYS
+    # -----------------------------------------------------
+    
+    with st.expander("Inventory Days Formula"):
+    
+        st.latex(r'''
+        \text{Inventory Days} =
+        \left(
+        \frac{\text{Inventory}}
+        {\text{COGS}}
+        \right) \times 365
+        ''')
+    
+        st.markdown(f"""
+    
+    ### Example Calculation
+    
+    Inventory Days = ({inventory:,.0f} ÷ {cogs:,.0f}) × 365
+    
+    = {inventory_days:.1f} days
+    
+    💡 Learning:
+    This shows how long inventory remains
+    inside the business before sale.
+    
+    """)
+    
+    # -----------------------------------------------------
+    # PAYABLE DAYS
+    # -----------------------------------------------------
+    
+    with st.expander("Payable Days Formula"):
+    
+        st.latex(r'''
+        \text{Payable Days} =
+        \left(
+        \frac{\text{Payables}}
+        {\text{COGS}}
+        \right) \times 365
+        ''')
+    
+        st.markdown(f"""
+    
+    ### Example Calculation
+    
+    Payable Days = ({payables:,.0f} ÷ {cogs:,.0f}) × 365
+    
+    = {payable_days:.1f} days
+    
+    💡 Learning:
+    This measures how long the business
+    takes to pay suppliers.
+    
+    """)
+    
+    # -----------------------------------------------------
+    # CASH CONVERSION CYCLE
+    # -----------------------------------------------------
+    
+    with st.expander("Cash Conversion Cycle Formula"):
+    
+        st.latex(r'''
+        \text{CCC} =
+        \text{Receivable Days}
+        +
+        \text{Inventory Days}
+        -
+        \text{Payable Days}
+        ''')
+    
+        st.markdown(f"""
+    
+    ### Example Calculation
+    
+    CCC = {receivable_days:.1f}
+    + {inventory_days:.1f}
+    - {payable_days:.1f}
+    
+    = {cash_conversion_cycle:.1f} days
+    
+    💡 Learning:
+    This shows how long cash remains
+    blocked in business operations.
+    
+    Lower CCC = healthier business liquidity.
+    
+    """)
+
+
    
     # =====================================================
     # FINANCIAL RATIO INTERPRETATION
