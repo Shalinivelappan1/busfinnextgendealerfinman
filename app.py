@@ -1,6 +1,7 @@
+```python
 # =========================================================
 # NEXTGEN DEALER FINANCE LAB
-# FULL STREAMLIT APP
+# FULL STREAMLIT APP WITH TAMIL LEARNING SUPPORT
 # =========================================================
 
 import streamlit as st
@@ -9,6 +10,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import warnings
+import random
 
 warnings.filterwarnings("ignore")
 
@@ -90,6 +92,18 @@ through practical simulations and interactive dashboards.
 # SIDEBAR
 # =========================================================
 
+language = st.sidebar.selectbox(
+
+    "🌐 Learning Language",
+
+    [
+
+        "English",
+        "English + தமிழ்"
+
+    ]
+)
+
 menu = st.sidebar.radio(
 
     "Choose Business Module",
@@ -126,6 +140,28 @@ menu = st.sidebar.radio(
 
     ]
 )
+
+# =========================================================
+# BUSINESS WISDOM
+# =========================================================
+
+tips = [
+
+    "Cash flow தான் business-ஓட உயிர்.",
+
+    "Fast collection = strong business.",
+
+    "Inventory control என்பது hidden profit.",
+
+    "Data வைத்து decision எடுத்தால் growth வேகம் அதிகம்.",
+
+    "Digital systems future growth-க்கு மிகவும் முக்கியம்."
+
+]
+
+if language == "English + தமிழ்":
+
+    st.info(f"💡 Business Wisdom: {random.choice(tips)}")
 
 # =========================================================
 # BUSINESS DASHBOARD
@@ -184,10 +220,6 @@ if menu == "Business Health Dashboard":
         currency(inventory)
     )
 
-    # ============================================
-    # BAR CHART
-    # ============================================
-
     health_df = pd.DataFrame({
 
         "Metric": [
@@ -226,10 +258,6 @@ if menu == "Business Health Dashboard":
         fig,
         use_container_width=True
     )
-
-    # ============================================
-    # HEALTH GAUGE
-    # ============================================
 
     health_score = 70
 
@@ -272,6 +300,15 @@ if menu == "Business Health Dashboard":
         fig,
         use_container_width=True
     )
+
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் விளக்கம்:
+
+'Business strong ஆக இருக்க sales மட்டும் போதாது.
+Profit, cash flow, collections எல்லாமே முக்கியம்.'
+""")
 
 # =========================================================
 # PROFITABILITY ENGINE
@@ -373,6 +410,16 @@ elif menu == "Profitability Engine":
         use_container_width=True
     )
 
+    if language == "English + தமிழ்":
+
+        st.success("""
+💡 தமிழ் விளக்கம்:
+
+'Sales பெரியதாக இருந்தாலும் profit இருக்க வேண்டும்.'
+
+'Discount அதிகமானால் margin குறையும்.'
+""")
+
 # =========================================================
 # CASH FLOW SIMULATOR
 # =========================================================
@@ -383,26 +430,22 @@ elif menu == "Cash Flow Simulator":
 
     opening_cash = st.number_input(
         "Opening Cash Balance",
-        value=1000000.0,
-        key="opening_cash"
+        value=1000000.0
     )
 
     monthly_collections = st.number_input(
         "Monthly Collections",
-        value=3500000.0,
-        key="collections"
+        value=3500000.0
     )
 
     monthly_payments = st.number_input(
         "Monthly Payments",
-        value=3200000.0,
-        key="payments"
+        value=3200000.0
     )
 
     delayed_payments = st.number_input(
         "Delayed Customer Payments",
-        value=500000.0,
-        key="delays"
+        value=500000.0
     )
 
     closing_cash = (
@@ -467,6 +510,16 @@ elif menu == "Cash Flow Simulator":
         use_container_width=True
     )
 
+    if language == "English + தமிழ்":
+
+        st.warning("""
+💡 தமிழ் விளக்கம்:
+
+'லாபம் இருந்தாலும் cash flow இல்லையெனில் business stress வரும்.'
+
+'Collection fast-aa வந்தால் business strong-aa இருக்கும்.'
+""")
+
 # =========================================================
 # CREDIT CONTROL LAB
 # =========================================================
@@ -482,16 +535,14 @@ elif menu == "Credit Control Lab":
 
     credit_amount = st.number_input(
         "Requested Credit",
-        value=2500000.0,
-        key="credit_amount"
+        value=2500000.0
     )
 
     payment_days = st.slider(
         "Credit Period (Days)",
         0,
         180,
-        90,
-        key="payment_days"
+        90
     )
 
     decision = st.radio(
@@ -527,10 +578,6 @@ but sales opportunity lost.
 Balanced risk approach.
 """)
 
-    # ============================================
-    # CREDIT RISK GAUGE
-    # ============================================
-
     risk_score = payment_days / 180 * 100
 
     fig = go.Figure(go.Indicator(
@@ -562,6 +609,18 @@ Balanced risk approach.
         use_container_width=True
     )
 
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் விளக்கம்:
+
+'அதிக நாட்கள் credit கொடுத்தால் cash cycle slow ஆகும்.'
+
+'Customer relationship முக்கியம்,
+ஆனால் financial discipline அதைவிட முக்கியம்.'
+""")
+```
+```python id="7h8x7j"
 # =========================================================
 # INVENTORY MANAGEMENT
 # =========================================================
@@ -648,6 +707,16 @@ Inventory levels healthy.
         use_container_width=True
     )
 
+    if language == "English + தமிழ்":
+
+        st.warning("""
+💡 தமிழ் விளக்கம்:
+
+'அதிக stock வைத்தால் cash block ஆகிவிடும்.'
+
+'குறைவான stock இருந்தால் sales miss ஆகும்.'
+""")
+
 # =========================================================
 # PRICING DECISION GAME
 # =========================================================
@@ -706,6 +775,15 @@ but volume risk exists.
 
         st.info("""
 Value-added strategy.
+""")
+
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் கருத்து:
+
+'Price குறைப்பது easy.
+ஆனால் profit maintain செய்வது தான் smart business.'
 """)
 
 # =========================================================
@@ -807,6 +885,15 @@ elif menu == "Dealer Growth Simulator":
         fig,
         use_container_width=True
     )
+
+    if language == "English + தமிழ்":
+
+        st.success("""
+💡 தமிழ் கருத்து:
+
+'Technology + disciplined finance + strong team = long-term growth.'
+""")
+
 # =========================================================
 # WORKING CAPITAL TRACKER
 # =========================================================
@@ -878,6 +965,14 @@ elif menu == "Working Capital Tracker":
         use_container_width=True
     )
 
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் விளக்கம்:
+
+'Working capital தான் daily business operations-ஓட backbone.'
+""")
+
 # =========================================================
 # CUSTOMER PROFITABILITY
 # =========================================================
@@ -943,8 +1038,17 @@ elif menu == "Customer Profitability":
         use_container_width=True
     )
 
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் கருத்து:
+
+'ஒவ்வொரு customer-உம் profitable ஆக இருக்க வேண்டியது அவசியம்.'
+""")
+```
+```python id="2xqfht"
 # =========================================================
-# BREAK EVEN CALCULATOR
+# BREAK-EVEN CALCULATOR
 # =========================================================
 
 elif menu == "Break-even Calculator":
@@ -1006,6 +1110,16 @@ elif menu == "Break-even Calculator":
             use_container_width=True
         )
 
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் விளக்கம்:
+
+'Break-even point தெரிந்தால் business risk குறையும்.'
+
+'Sales எவ்வளவு வந்தால் loss இல்லாமல் இருக்கும் என்பதை இது காட்டும்.'
+""")
+
 # =========================================================
 # DIGITAL TRANSFORMATION SCORE
 # =========================================================
@@ -1060,16 +1174,31 @@ elif menu == "Digital Transformation Score":
     })
 
     fig = px.bar(
+
         digital_df,
+
         x="Capability",
+
         y="Adoption",
+
         title="Digital Adoption"
+
     )
 
     st.plotly_chart(
         fig,
         use_container_width=True
     )
+
+    if language == "English + தமிழ்":
+
+        st.success("""
+💡 தமிழ் கருத்து:
+
+'Digital tools time-ஐயும் money-ஐயும் save செய்யும்.'
+
+'Technology பயன்படுத்தும் dealers future-ready ஆக இருப்பார்கள்.'
+""")
 
 # =========================================================
 # NEXTGEN LEADERSHIP
@@ -1110,6 +1239,62 @@ elif menu == "NextGen Leadership":
         "Leadership Score",
         pct(leadership_score)
     )
+
+    leadership_categories = [
+
+        "Delegation",
+        "Innovation",
+        "Discipline"
+
+    ]
+
+    leadership_values = [
+
+        delegation,
+        innovation,
+        discipline
+
+    ]
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatterpolar(
+
+        r=leadership_values,
+
+        theta=leadership_categories,
+
+        fill='toself'
+
+    ))
+
+    fig.update_layout(
+
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0,10]
+            )
+        ),
+
+        showlegend=False
+
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    if language == "English + தமிழ்":
+
+        st.info("""
+💡 தமிழ் சிந்தனை:
+
+'குடும்ப business-ஐ professional business-ஆக மாற்றுவது next generation பொறுப்பு.'
+
+'Leadership என்பது people + systems + discipline.'
+""")
 
 # =========================================================
 # BUSINESS DECISION CHALLENGE
@@ -1164,6 +1349,16 @@ Balanced business decision.
 Financially conservative approach.
 """)
 
+    if language == "English + தமிழ்":
+
+        st.warning("""
+💡 தமிழ் கருத்து:
+
+'Sales மட்டும் பார்க்காமல் risk-யும் evaluate செய்ய வேண்டும்.'
+
+'Smart dealer எப்போதும் cash flow-ஐ கவனிப்பார்.'
+""")
+
 # =========================================================
 # ACTION PLAN GENERATOR
 # =========================================================
@@ -1211,4 +1406,31 @@ Digital Goal:
 
     st.success("""
 Your personalized dealership improvement plan is ready.
+""")
+
+    if language == "English + தமிழ்":
+
+        st.success("""
+💡 தமிழ் Reflection:
+
+'அடுத்த 90 நாட்களில் உங்கள் business-ல் என்ன மாற்றப் போகிறீர்கள்?'
+
+'Small improvements create long-term growth.'
+""")
+```
+# =========================================================
+# FOOTER
+# =========================================================
+
+st.markdown("---")
+
+st.caption("""
+🏢 NextGen Dealer Finance Lab
+
+Designed for experiential learning in dealership business management.
+Developed and Designed by Prof.Shalini Velappan, IIM Trichy
+
+Focus Areas:
+Profitability | Cash Flow | Growth | Digital Transformation | Leadership
+
 """)
