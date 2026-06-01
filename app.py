@@ -807,3 +807,408 @@ elif menu == "Dealer Growth Simulator":
         fig,
         use_container_width=True
     )
+# =========================================================
+# WORKING CAPITAL TRACKER
+# =========================================================
+
+elif menu == "Working Capital Tracker":
+
+    st.header("🏦 Working Capital Tracker")
+
+    receivables = st.number_input(
+        "Receivables",
+        value=2500000.0
+    )
+
+    inventory = st.number_input(
+        "Inventory",
+        value=3000000.0
+    )
+
+    payables = st.number_input(
+        "Payables",
+        value=1800000.0
+    )
+
+    working_capital = (
+        receivables +
+        inventory -
+        payables
+    )
+
+    st.metric(
+        "Working Capital",
+        currency(working_capital)
+    )
+
+    wc_df = pd.DataFrame({
+
+        "Component": [
+
+            "Receivables",
+            "Inventory",
+            "Payables"
+
+        ],
+
+        "Value": [
+
+            receivables,
+            inventory,
+            payables
+
+        ]
+
+    })
+
+    fig = px.bar(
+
+        wc_df,
+
+        x="Component",
+
+        y="Value",
+
+        title="Working Capital Components"
+
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+# =========================================================
+# CUSTOMER PROFITABILITY
+# =========================================================
+
+elif menu == "Customer Profitability":
+
+    st.header("👥 Customer Profitability")
+
+    customer_sales = st.number_input(
+        "Customer Sales",
+        value=1500000.0
+    )
+
+    customer_cost = st.number_input(
+        "Customer Service Cost",
+        value=1200000.0
+    )
+
+    customer_profit = (
+        customer_sales -
+        customer_cost
+    )
+
+    st.metric(
+        "Customer Profit",
+        currency(customer_profit)
+    )
+
+    customer_df = pd.DataFrame({
+
+        "Metric": [
+
+            "Sales",
+            "Cost",
+            "Profit"
+
+        ],
+
+        "Value": [
+
+            customer_sales,
+            customer_cost,
+            customer_profit
+
+        ]
+
+    })
+
+    fig = px.pie(
+
+        customer_df,
+
+        names="Metric",
+
+        values="Value",
+
+        title="Customer Profitability"
+
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+# =========================================================
+# BREAK EVEN CALCULATOR
+# =========================================================
+
+elif menu == "Break-even Calculator":
+
+    st.header("📈 Break-even Calculator")
+
+    fixed_cost = st.number_input(
+        "Fixed Costs",
+        value=1000000.0
+    )
+
+    selling_price = st.number_input(
+        "Selling Price Per Unit",
+        value=400.0
+    )
+
+    variable_cost = st.number_input(
+        "Variable Cost Per Unit",
+        value=320.0
+    )
+
+    contribution = (
+        selling_price -
+        variable_cost
+    )
+
+    if contribution > 0:
+
+        breakeven = fixed_cost / contribution
+
+        st.metric(
+            "Break-even Units",
+            round(breakeven,2)
+        )
+
+        x = np.arange(0, 50000, 1000)
+
+        revenue = x * selling_price
+        total_cost = fixed_cost + x * variable_cost
+
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(
+            x=x,
+            y=revenue,
+            mode='lines',
+            name='Revenue'
+        ))
+
+        fig.add_trace(go.Scatter(
+            x=x,
+            y=total_cost,
+            mode='lines',
+            name='Total Cost'
+        ))
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True
+        )
+
+# =========================================================
+# DIGITAL TRANSFORMATION SCORE
+# =========================================================
+
+elif menu == "Digital Transformation Score":
+
+    st.header("💻 Digital Transformation Score")
+
+    upi = st.checkbox("UPI Payments")
+    erp = st.checkbox("ERP System")
+    whatsapp = st.checkbox("WhatsApp Business")
+    analytics = st.checkbox("Analytics Dashboard")
+    crm = st.checkbox("CRM Usage")
+
+    score = sum([
+        upi,
+        erp,
+        whatsapp,
+        analytics,
+        crm
+    ])
+
+    digital_score = score / 5 * 100
+
+    st.metric(
+        "Digital Readiness Score",
+        pct(digital_score)
+    )
+
+    digital_df = pd.DataFrame({
+
+        "Capability": [
+
+            "UPI",
+            "ERP",
+            "WhatsApp",
+            "Analytics",
+            "CRM"
+
+        ],
+
+        "Adoption": [
+
+            int(upi),
+            int(erp),
+            int(whatsapp),
+            int(analytics),
+            int(crm)
+
+        ]
+
+    })
+
+    fig = px.bar(
+        digital_df,
+        x="Capability",
+        y="Adoption",
+        title="Digital Adoption"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+# =========================================================
+# NEXTGEN LEADERSHIP
+# =========================================================
+
+elif menu == "NextGen Leadership":
+
+    st.header("🌟 NextGen Leadership")
+
+    delegation = st.slider(
+        "Delegation Ability",
+        0,
+        10,
+        5
+    )
+
+    innovation = st.slider(
+        "Innovation Mindset",
+        0,
+        10,
+        7
+    )
+
+    discipline = st.slider(
+        "Financial Discipline",
+        0,
+        10,
+        6
+    )
+
+    leadership_score = (
+        delegation +
+        innovation +
+        discipline
+    ) / 3 * 10
+
+    st.metric(
+        "Leadership Score",
+        pct(leadership_score)
+    )
+
+# =========================================================
+# BUSINESS DECISION CHALLENGE
+# =========================================================
+
+elif menu == "Business Decision Challenge":
+
+    st.header("🎯 Business Decision Challenge")
+
+    st.markdown("""
+
+A large contractor requests:
+
+- ₹40 lakh order
+- 120-day credit
+- extra discount
+
+What will you do?
+
+""")
+
+    decision = st.radio(
+
+        "Choose Your Action",
+
+        [
+
+            "Accept Full Order",
+            "Negotiate Terms",
+            "Reject Order"
+
+        ]
+
+    )
+
+    if decision == "Accept Full Order":
+
+        st.warning("""
+High sales growth,
+but major cash-flow risk.
+""")
+
+    elif decision == "Negotiate Terms":
+
+        st.success("""
+Balanced business decision.
+""")
+
+    else:
+
+        st.info("""
+Financially conservative approach.
+""")
+
+# =========================================================
+# ACTION PLAN GENERATOR
+# =========================================================
+
+elif menu == "Action Plan Generator":
+
+    st.header("📝 My 90-Day Action Plan")
+
+    finance_goal = st.text_input(
+        "One Financial Improvement"
+    )
+
+    operations_goal = st.text_input(
+        "One Operations Improvement"
+    )
+
+    digital_goal = st.text_input(
+        "One Digital Improvement"
+    )
+
+    action_plan = f"""
+
+NEXTGEN DEALER ACTION PLAN
+
+Financial Goal:
+{finance_goal}
+
+Operations Goal:
+{operations_goal}
+
+Digital Goal:
+{digital_goal}
+
+"""
+
+    st.download_button(
+
+        label="Download My Action Plan",
+
+        data=action_plan,
+
+        file_name="nextgen_action_plan.txt"
+
+    )
+
+    st.success("""
+Your personalized dealership improvement plan is ready.
+""")
