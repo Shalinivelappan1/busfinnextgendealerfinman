@@ -1483,15 +1483,15 @@ elif menu == "Business Decision Challenge":
 
     st.markdown("""
 
-A large contractor requests:
-
-- ₹40 lakh order
-- 120-day credit
-- extra discount
-
-What will you do?
-
-""")
+    A large contractor requests:
+    
+    - ₹40 lakh order
+    - 120-day credit
+    - extra discount
+    
+    What will you do?
+    
+    """)
 
     decision = st.radio(
 
