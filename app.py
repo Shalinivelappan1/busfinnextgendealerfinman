@@ -1596,13 +1596,16 @@ Your personalized dealership improvement plan is ready.
 
 st.markdown("---")
 
-st.caption("""
-🏢 NextGen Dealer Finance Lab
+st.caption(
+    """
+NextGen Dealer Finance Lab
 
 Designed for experiential learning in dealership business management.
-Developed and Designed by Prof.Shalini Velappan, IIM Trichy
+
+Developed and Designed by Prof. Shalini Velappan, IIM Trichy
 
 Focus Areas:
-Profitability | Cash Flow | Growth | Digital Transformation | Leadership
+Profitability | Cash
+```
 
-""")
+
