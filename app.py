@@ -1485,11 +1485,11 @@ elif menu == "Business Decision Challenge":
 
     A large contractor requests:
     
-    - ₹40 lakh order
-    - 120-day credit
-    - extra discount
-    
-    What will you do?
+        - ₹40 lakh order
+        - 120-day credit
+        - extra discount
+        
+        What will you do?
     
     """)
     decision = st.radio(
