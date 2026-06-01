@@ -851,8 +851,9 @@ Balanced risk approach.
         fig,
         use_container_width=True
     )
+    tamil_insight("credit")
 
- tamil_insight("credit")
+ 
 
 # =========================================================
 # INVENTORY MANAGEMENT
