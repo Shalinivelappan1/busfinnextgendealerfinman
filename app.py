@@ -36,6 +36,291 @@ def pct(x):
     return f"{round(x,2)}%"
 
 # =========================================================
+# ADVANCED MODULE INSIGHTS
+# =========================================================
+
+def tamil_insight(module_name):
+
+    insights = {
+
+        "dashboard": """
+
+💡 Business Insight
+
+Healthy business means:
+- strong sales
+- healthy profit
+- stable cash flow
+- controlled inventory
+
+💡 தமிழ் விளக்கம்
+
+'Sales மட்டும் பெரியதாக இருந்தால் போதாது.
+Cash flow மற்றும் collections strong ஆக இருக்க வேண்டும்.'
+
+🎯 Dealer Action
+
+Weekly business dashboard review செய்யுங்கள்.
+
+""",
+
+        "profit": """
+
+💡 Business Insight
+
+High sales with low margins can destroy profitability.
+
+Discount discipline is very important.
+
+💡 தமிழ் விளக்கம்
+
+'Sales பெரியதாக இருந்தாலும் profit இருக்க வேண்டும்.'
+
+'Discount அதிகமானால் margin குறையும்.'
+
+🎯 Dealer Action
+
+ஒவ்வொரு product category-க்கும் margin tracking செய்யுங்கள்.
+
+""",
+
+        "cashflow": """
+
+💡 Business Insight
+
+Cash flow problems usually start before profit problems.
+
+Collections drive business survival.
+
+💡 தமிழ் விளக்கம்
+
+'லாபம் இருந்தாலும் cash flow இல்லையெனில் business stress வரும்.'
+
+'Collection fast-aa வந்தால் business strong-aa இருக்கும்.'
+
+🎯 Dealer Action
+
+Top overdue customers list weekly review செய்யுங்கள்.
+
+""",
+
+        "credit": """
+
+💡 Business Insight
+
+Good customers are important.
+But uncontrolled credit is dangerous.
+
+💡 தமிழ் விளக்கம்
+
+'அதிக நாட்கள் credit கொடுத்தால் cash cycle slow ஆகும்.'
+
+'Financial discipline மிகவும் முக்கியம்.'
+
+🎯 Dealer Action
+
+Customer-wise credit limit அமைக்கவும்.
+
+""",
+
+        "inventory": """
+
+💡 Business Insight
+
+Inventory is not always an asset.
+Sometimes it becomes blocked cash.
+
+💡 தமிழ் விளக்கம்
+
+'அதிக stock வைத்தால் cash block ஆகிவிடும்.'
+
+'குறைவான stock இருந்தால் sales miss ஆகும்.'
+
+🎯 Dealer Action
+
+Slow-moving inventory monthly review செய்யுங்கள்.
+
+""",
+
+        "pricing": """
+
+💡 Business Insight
+
+Price wars reduce long-term profitability.
+
+Smart dealers compete using:
+- service
+- reliability
+- relationships
+
+💡 தமிழ் கருத்து
+
+'Price குறைப்பது easy.
+Profit maintain செய்வது தான் smart business.'
+
+🎯 Dealer Action
+
+Value-added customer service உருவாக்குங்கள்.
+
+""",
+
+        "growth": """
+
+💡 Business Insight
+
+Sustainable growth requires:
+- systems
+- people
+- technology
+- financial discipline
+
+💡 தமிழ் கருத்து
+
+'Technology + disciplined finance + strong team = long-term growth.'
+
+🎯 Dealer Action
+
+Business automation opportunities identify செய்யுங்கள்.
+
+""",
+
+        "workingcapital": """
+
+💡 Business Insight
+
+Working capital is the fuel for daily operations.
+
+Poor working capital creates stress even in profitable businesses.
+
+💡 தமிழ் விளக்கம்
+
+'Working capital தான் business operations-ஓட backbone.'
+
+🎯 Dealer Action
+
+Receivables + inventory + payables weekly monitor செய்யுங்கள்.
+
+""",
+
+        "customer": """
+
+💡 Business Insight
+
+Not all customers are profitable.
+
+Some customers increase sales but reduce profit.
+
+💡 தமிழ் கருத்து
+
+'ஒவ்வொரு customer-உம் profitable ஆக இருக்க வேண்டியது அவசியம்.'
+
+🎯 Dealer Action
+
+Top profitable customers identify செய்யுங்கள்.
+
+""",
+
+        "breakeven": """
+
+💡 Business Insight
+
+Knowing break-even helps reduce business risk.
+
+💡 தமிழ் விளக்கம்
+
+'Break-even point தெரிந்தால் business risk குறையும்.'
+
+🎯 Dealer Action
+
+Minimum monthly sales target calculate செய்யுங்கள்.
+
+""",
+
+        "digital": """
+
+💡 Business Insight
+
+Digital systems improve:
+- speed
+- visibility
+- collections
+- decision making
+
+💡 தமிழ் கருத்து
+
+'Digital tools time-ஐயும் money-ஐயும் save செய்யும்.'
+
+🎯 Dealer Action
+
+At least one manual process-ஐ digitize செய்யுங்கள்.
+
+""",
+
+        "leadership": """
+
+💡 Business Insight
+
+Next-generation leaders must build:
+- systems
+- teams
+- scalable processes
+
+💡 தமிழ் சிந்தனை
+
+'குடும்ப business-ஐ professional business-ஆக மாற்றுவது next generation பொறுப்பு.'
+
+🎯 Dealer Action
+
+Weekly leadership review meetings நடத்துங்கள்.
+
+""",
+
+        "decision": """
+
+💡 Business Insight
+
+Smart business decisions balance:
+- growth
+- risk
+- cash flow
+- profitability
+
+💡 தமிழ் கருத்து
+
+'Sales மட்டும் பார்க்காமல் risk-யும் evaluate செய்ய வேண்டும்.'
+
+🎯 Dealer Action
+
+Large orders accept செய்வதற்கு முன் cash flow impact evaluate செய்யுங்கள்.
+
+""",
+
+        "actionplan": """
+
+💡 Business Insight
+
+Small improvements repeated consistently create long-term growth.
+
+💡 தமிழ் Reflection
+
+'அடுத்த 90 நாட்களில் உங்கள் business-ல் என்ன மாற்றப் போகிறீர்கள்?'
+
+🎯 Dealer Action
+
+One improvement every month implement செய்யுங்கள்.
+
+"""
+
+    }
+
+    if language == "English + தமிழ்":
+
+        st.info(
+            insights.get(module_name, "")
+        )
+
+
+# =========================================================
 # CUSTOM CSS
 # =========================================================
 
@@ -299,15 +584,9 @@ if menu == "Business Health Dashboard":
         fig,
         use_container_width=True
     )
+    tamil_insight("dashboard")
 
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் விளக்கம்:
-
-'Business strong ஆக இருக்க sales மட்டும் போதாது.
-Profit, cash flow, collections எல்லாமே முக்கியம்.'
-""")
+ 
 
 # =========================================================
 # PROFITABILITY ENGINE
