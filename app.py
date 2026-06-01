@@ -1492,7 +1492,6 @@ elif menu == "Business Decision Challenge":
     What will you do?
     
     """)
-
     decision = st.radio(
 
         "Choose Your Action",
@@ -1525,8 +1524,7 @@ Balanced business decision.
         st.info("""
 Financially conservative approach.
 """)
-
-    tamil_insight("decision")
+tamil_insight("decision")
 
 # =========================================================
 # ACTION PLAN GENERATOR
