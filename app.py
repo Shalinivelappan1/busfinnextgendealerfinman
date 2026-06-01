@@ -940,8 +940,9 @@ Inventory levels healthy.
         fig,
         use_container_width=True
     )
+    tamil_insight("inventory")
 
-   tamil_insight("inventory")
+   
 
 # =========================================================
 # PRICING DECISION GAME
