@@ -1248,8 +1248,7 @@ elif menu == "Customer Profitability":
         fig,
         use_container_width=True
     )
-
-   tamil_insight("customer")
+    tamil_insight("customer")
 
 # =========================================================
 # BREAK-EVEN CALCULATOR
