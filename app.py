@@ -1477,21 +1477,26 @@ elif menu == "NextGen Leadership":
 # BUSINESS DECISION CHALLENGE
 # =========================================================
 
+# =========================================================
+# BUSINESS DECISION CHALLENGE
+# =========================================================
+
 elif menu == "Business Decision Challenge":
 
     st.header("🎯 Business Decision Challenge")
 
-    st.markdown("""
+    st.markdown(
+        """
+A large contractor requests:
 
-    A large contractor requests:
-    
-        - ₹40 lakh order
-        - 120-day credit
-        - extra discount
-        
-        What will you do?
-    
-    """)
+- Rs. 40 lakh order
+- 120-day credit
+- extra discount
+
+What will you do?
+"""
+    )
+
     decision = st.radio(
 
         "Choose Your Action",
@@ -1508,23 +1513,31 @@ elif menu == "Business Decision Challenge":
 
     if decision == "Accept Full Order":
 
-        st.warning("""
+        st.warning(
+            """
 High sales growth,
 but major cash-flow risk.
-""")
+"""
+        )
 
     elif decision == "Negotiate Terms":
 
-        st.success("""
+        st.success(
+            """
 Balanced business decision.
-""")
+"""
+        )
 
     else:
 
-        st.info("""
+        st.info(
+            """
 Financially conservative approach.
-""")
-tamil_insight("decision")
+"""
+        )
+
+    tamil_insight("decision")
+
 
 # =========================================================
 # ACTION PLAN GENERATOR
