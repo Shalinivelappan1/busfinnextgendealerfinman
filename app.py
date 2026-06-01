@@ -998,13 +998,16 @@ Margin protected,
 but volume risk exists.
 """)
 
+    
     else:
 
         st.info("""
 Value-added strategy.
 """)
-tamil_insight("pricing")
-    
+
+    tamil_insight("pricing")
+
+
 
 # =========================================================
 # DEALER GROWTH SIMULATOR
