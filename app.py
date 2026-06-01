@@ -1716,192 +1716,192 @@ This section summarizes:
         use_container_width=True
     )
    
-# =====================================================
-# FINANCIAL RATIO INTERPRETATION
-# =====================================================
-
-st.subheader("📖 Ratio Interpretation Guide")
-
-# -----------------------------------------------------
-# PROFIT MARGIN
-# -----------------------------------------------------
-
-if profit_margin >= 10:
-
-    st.success("""
-🟢 Profit Margin: Strong
-
-Your dealership is generating healthy profitability.
-Good pricing discipline and cost management may exist.
-""")
-
-elif profit_margin >= 5:
-
-    st.warning("""
-🟠 Profit Margin: Moderate
-
-Profitability is acceptable,
-but operating efficiency can improve.
-""")
-
-else:
-
-    st.error("""
-🔴 Profit Margin: Weak
-
-Margins are low.
-Review:
-- discounts
-- operating costs
-- pricing strategy
-""")
-
-# -----------------------------------------------------
-# EXPENSE RATIO
-# -----------------------------------------------------
-
-if expense_ratio <= 15:
-
-    st.success("""
-🟢 Expense Ratio: Healthy
-
-Operating expenses are under control.
-""")
-
-elif expense_ratio <= 25:
-
-    st.warning("""
-🟠 Expense Ratio: Moderate
-
-Monitor overhead costs carefully.
-""")
-
-else:
-
-    st.error("""
-🔴 Expense Ratio: High
-
-Business expenses may be reducing profitability significantly.
-""")
-
-# -----------------------------------------------------
-# RECEIVABLE DAYS
-# -----------------------------------------------------
-
-if receivable_days <= 45:
-
-    st.success("""
-🟢 Receivable Days: Healthy
-
-Customer collections are efficient.
-""")
-
-elif receivable_days <= 90:
-
-    st.warning("""
-🟠 Receivable Days: Moderate
-
-Collections are slowing down.
-Monitor overdue customers carefully.
-""")
-
-else:
-
-    st.error("""
-🔴 Receivable Days: High Risk
-
-Cash is getting blocked in customer credit.
-""")
-
-# -----------------------------------------------------
-# INVENTORY DAYS
-# -----------------------------------------------------
-
-if inventory_days <= 60:
-
-    st.success("""
-🟢 Inventory Days: Healthy
-
-Inventory movement appears efficient.
-""")
-
-elif inventory_days <= 120:
-
-    st.warning("""
-🟠 Inventory Days: Moderate
-
-Some inventory buildup may exist.
-""")
-
-else:
-
-    st.error("""
-🔴 Inventory Days: High
-
-Too much inventory may be blocking working capital.
-""")
-
-# -----------------------------------------------------
-# PAYABLE DAYS
-# -----------------------------------------------------
-
-if payable_days >= 60:
-
-    st.success("""
-🟢 Payable Days: Strong Supplier Support
-
-Supplier credit is supporting business liquidity.
-""")
-
-elif payable_days >= 30:
-
-    st.warning("""
-🟠 Payable Days: Moderate
-
-Supplier payment cycle is manageable.
-""")
-
-else:
-
-    st.error("""
-🔴 Payable Days: Low
-
-Supplier payments may be creating cash pressure.
-""")
-
-# -----------------------------------------------------
-# CASH CONVERSION CYCLE
-# -----------------------------------------------------
-
-if cash_conversion_cycle <= 45:
-
-    st.success("""
-🟢 Cash Conversion Cycle: Excellent
-
-Cash moves efficiently through the business.
-""")
-
-elif cash_conversion_cycle <= 90:
-
-    st.warning("""
-🟠 Cash Conversion Cycle: Moderate
-
-Some working capital pressure exists.
-""")
-
-else:
-
-    st.error("""
-🔴 Cash Conversion Cycle: Weak
-
-Cash is getting stuck too long in operations.
-
-Focus on:
-- faster collections
-- lower inventory
-- better supplier negotiation
-""")
-
+    # =====================================================
+    # FINANCIAL RATIO INTERPRETATION
+    # =====================================================
+    
+    st.subheader("📖 Ratio Interpretation Guide")
+    
+    # -----------------------------------------------------
+    # PROFIT MARGIN
+    # -----------------------------------------------------
+    
+    if profit_margin >= 10:
+    
+        st.success("""
+    🟢 Profit Margin: Strong
+    
+    Your dealership is generating healthy profitability.
+    Good pricing discipline and cost management may exist.
+    """)
+    
+    elif profit_margin >= 5:
+    
+        st.warning("""
+    🟠 Profit Margin: Moderate
+    
+    Profitability is acceptable,
+    but operating efficiency can improve.
+    """)
+    
+    else:
+    
+        st.error("""
+    🔴 Profit Margin: Weak
+    
+    Margins are low.
+    Review:
+    - discounts
+    - operating costs
+    - pricing strategy
+    """)
+    
+    # -----------------------------------------------------
+    # EXPENSE RATIO
+    # -----------------------------------------------------
+    
+    if expense_ratio <= 15:
+    
+        st.success("""
+    🟢 Expense Ratio: Healthy
+    
+    Operating expenses are under control.
+    """)
+    
+    elif expense_ratio <= 25:
+    
+        st.warning("""
+    🟠 Expense Ratio: Moderate
+    
+    Monitor overhead costs carefully.
+    """)
+    
+    else:
+    
+        st.error("""
+    🔴 Expense Ratio: High
+    
+    Business expenses may be reducing profitability significantly.
+    """)
+    
+    # -----------------------------------------------------
+    # RECEIVABLE DAYS
+    # -----------------------------------------------------
+    
+    if receivable_days <= 45:
+    
+        st.success("""
+    🟢 Receivable Days: Healthy
+    
+    Customer collections are efficient.
+    """)
+    
+    elif receivable_days <= 90:
+    
+        st.warning("""
+    🟠 Receivable Days: Moderate
+    
+    Collections are slowing down.
+    Monitor overdue customers carefully.
+    """)
+    
+    else:
+    
+        st.error("""
+    🔴 Receivable Days: High Risk
+    
+    Cash is getting blocked in customer credit.
+    """)
+    
+    # -----------------------------------------------------
+    # INVENTORY DAYS
+    # -----------------------------------------------------
+    
+    if inventory_days <= 60:
+    
+        st.success("""
+    🟢 Inventory Days: Healthy
+    
+    Inventory movement appears efficient.
+    """)
+    
+    elif inventory_days <= 120:
+    
+        st.warning("""
+    🟠 Inventory Days: Moderate
+    
+    Some inventory buildup may exist.
+    """)
+    
+    else:
+    
+        st.error("""
+    🔴 Inventory Days: High
+    
+    Too much inventory may be blocking working capital.
+    """)
+    
+    # -----------------------------------------------------
+    # PAYABLE DAYS
+    # -----------------------------------------------------
+    
+    if payable_days >= 60:
+    
+        st.success("""
+    🟢 Payable Days: Strong Supplier Support
+    
+    Supplier credit is supporting business liquidity.
+    """)
+    
+    elif payable_days >= 30:
+    
+        st.warning("""
+    🟠 Payable Days: Moderate
+    
+    Supplier payment cycle is manageable.
+    """)
+    
+    else:
+    
+        st.error("""
+    🔴 Payable Days: Low
+    
+    Supplier payments may be creating cash pressure.
+    """)
+    
+    # -----------------------------------------------------
+    # CASH CONVERSION CYCLE
+    # -----------------------------------------------------
+    
+    if cash_conversion_cycle <= 45:
+    
+        st.success("""
+    🟢 Cash Conversion Cycle: Excellent
+    
+    Cash moves efficiently through the business.
+    """)
+    
+    elif cash_conversion_cycle <= 90:
+    
+        st.warning("""
+    🟠 Cash Conversion Cycle: Moderate
+    
+    Some working capital pressure exists.
+    """)
+    
+    else:
+    
+        st.error("""
+    🔴 Cash Conversion Cycle: Weak
+    
+    Cash is getting stuck too long in operations.
+    
+    Focus on:
+    - faster collections
+    - lower inventory
+    - better supplier negotiation
+    """)
+    
 
 
     # =====================================================
