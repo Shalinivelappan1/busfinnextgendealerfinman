@@ -1416,7 +1416,7 @@ Your personalized dealership improvement plan is ready.
 
 'Small improvements create long-term growth.'
 """)
-```
+
 # =========================================================
 # FOOTER
 # =========================================================
