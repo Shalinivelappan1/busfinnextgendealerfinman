@@ -421,6 +421,8 @@ menu = st.sidebar.radio(
         "Business Decision Challenge",
         
         "Dealer Reflection & Financial Scorecard",
+        
+        "Cash Flow Crisis Simulation",
 
         "Action Plan Generator"
 
@@ -2115,6 +2117,190 @@ This section summarizes:
 Low profitability detected.
 Review discounts and operating costs.
 """)
+
+# =========================================================
+# CASH FLOW CRISIS SIMULATION
+# =========================================================
+
+elif menu == "Cash Flow Crisis Simulation":
+
+    st.header("🚨 Cash Flow Crisis Simulation")
+
+    st.markdown("""
+A sudden slowdown has affected your dealership.
+
+Problems:
+- Customer payments delayed
+- Inventory buildup increasing
+- Supplier payments due
+
+You must take business decisions quickly.
+""")
+
+    # =====================================================
+    # STARTING CONDITIONS
+    # =====================================================
+
+    cash_balance = 1500000
+    receivables = 6000000
+    inventory = 7000000
+    supplier_due = 3500000
+
+    st.subheader("📊 Current Business Situation")
+
+    col1, col2 = st.columns(2)
+
+    col1.metric(
+        "Cash Balance",
+        currency(cash_balance)
+    )
+
+    col1.metric(
+        "Receivables",
+        currency(receivables)
+    )
+
+    col2.metric(
+        "Inventory",
+        currency(inventory)
+    )
+
+    col2.metric(
+        "Supplier Due",
+        currency(supplier_due)
+    )
+
+    # =====================================================
+    # DECISION OPTIONS
+    # =====================================================
+
+    st.subheader("🎯 Choose Your Actions")
+
+    reduce_inventory = st.checkbox(
+        "Offer discounts to reduce inventory"
+    )
+
+    improve_collection = st.checkbox(
+        "Aggressively collect overdue payments"
+    )
+
+    negotiate_supplier = st.checkbox(
+        "Negotiate extended supplier credit"
+    )
+
+    bank_loan = st.checkbox(
+        "Take short-term working capital loan"
+    )
+
+    # =====================================================
+    # IMPACT CALCULATION
+    # =====================================================
+
+    final_cash = cash_balance
+
+    if reduce_inventory:
+        final_cash += 1200000
+
+    if improve_collection:
+        final_cash += 1800000
+
+    if negotiate_supplier:
+        final_cash += 1000000
+
+    if bank_loan:
+        final_cash += 2000000
+
+    # =====================================================
+    # RESULT
+    # =====================================================
+
+    st.subheader("📈 Simulation Result")
+
+    st.metric(
+        "Final Cash Position",
+        currency(final_cash)
+    )
+
+    if final_cash >= 5000000:
+
+        st.success("""
+🟢 Excellent crisis management.
+
+Strong working capital decisions improved liquidity.
+""")
+
+    elif final_cash >= 3000000:
+
+        st.warning("""
+🟠 Moderate recovery achieved.
+
+Some financial pressure still exists.
+""")
+
+    else:
+
+        st.error("""
+🔴 Cash stress continues.
+
+More aggressive action may be required.
+""")
+
+    # =====================================================
+    # VISUALIZATION
+    # =====================================================
+
+    sim_df = pd.DataFrame({
+
+        "Stage": [
+
+            "Initial Cash",
+            "Final Cash"
+
+        ],
+
+        "Amount": [
+
+            cash_balance,
+            final_cash
+
+        ]
+
+    })
+
+    fig = px.bar(
+
+        sim_df,
+
+        x="Stage",
+
+        y="Amount",
+
+        title="Cash Position Improvement"
+
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    # =====================================================
+    # LEARNING INSIGHT
+    # =====================================================
+
+    st.info("""
+💡 Simulation Learning
+
+Cash flow crises are usually solved through:
+- faster collections
+- inventory reduction
+- supplier negotiation
+- disciplined finance management
+""")
+
+    tamil_insight("cashflow")
+
+
 
     # =====================================================
     # DEALER REFLECTION
