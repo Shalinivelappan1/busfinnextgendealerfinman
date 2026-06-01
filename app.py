@@ -1592,6 +1592,7 @@ Your personalized dealership improvement plan is ready.
 
     tamil_insight("actionplan")
 
+
 # =========================================================
 # FOOTER
 # =========================================================
@@ -1607,7 +1608,9 @@ Designed for experiential learning in dealership business management.
 Developed and Designed by Prof. Shalini Velappan, IIM Trichy
 
 Focus Areas:
-Profitability | Cash
-```
+Profitability | Cash Flow | Growth | Digital Transformation | Leadership
+"""
+)
+
 
 
