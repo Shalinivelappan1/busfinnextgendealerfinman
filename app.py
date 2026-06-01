@@ -618,8 +618,7 @@ Balanced risk approach.
 'Customer relationship முக்கியம்,
 ஆனால் financial discipline அதைவிட முக்கியம்.'
 """)
-```
-```python id="7h8x7j"
+
 # =========================================================
 # INVENTORY MANAGEMENT
 # =========================================================
