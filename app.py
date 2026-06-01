@@ -425,27 +425,7 @@ menu = st.sidebar.radio(
     ]
 )
 
-# =========================================================
-# BUSINESS WISDOM
-# =========================================================
 
-tips = [
-
-    "Cash flow தான் business-ஓட உயிர்.",
-
-    "Fast collection = strong business.",
-
-    "Inventory control என்பது hidden profit.",
-
-    "Data வைத்து decision எடுத்தால் growth வேகம் அதிகம்.",
-
-    "Digital systems future growth-க்கு மிகவும் முக்கியம்."
-
-]
-
-if language == "English + தமிழ்":
-
-    st.info(f"💡 Business Wisdom: {random.choice(tips)}")
 
 # =========================================================
 # BUSINESS DASHBOARD
@@ -687,16 +667,8 @@ elif menu == "Profitability Engine":
         fig,
         use_container_width=True
     )
+    tamil_insight("profit")
 
-    if language == "English + தமிழ்":
-
-        st.success("""
-💡 தமிழ் விளக்கம்:
-
-'Sales பெரியதாக இருந்தாலும் profit இருக்க வேண்டும்.'
-
-'Discount அதிகமானால் margin குறையும்.'
-""")
 
 # =========================================================
 # CASH FLOW SIMULATOR
@@ -787,16 +759,9 @@ elif menu == "Cash Flow Simulator":
         fig,
         use_container_width=True
     )
+    tamil_insight("cashflow")
 
-    if language == "English + தமிழ்":
-
-        st.warning("""
-💡 தமிழ் விளக்கம்:
-
-'லாபம் இருந்தாலும் cash flow இல்லையெனில் business stress வரும்.'
-
-'Collection fast-aa வந்தால் business strong-aa இருக்கும்.'
-""")
+    
 
 # =========================================================
 # CREDIT CONTROL LAB
@@ -887,16 +852,7 @@ Balanced risk approach.
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் விளக்கம்:
-
-'அதிக நாட்கள் credit கொடுத்தால் cash cycle slow ஆகும்.'
-
-'Customer relationship முக்கியம்,
-ஆனால் financial discipline அதைவிட முக்கியம்.'
-""")
+ tamil_insight("credit")
 
 # =========================================================
 # INVENTORY MANAGEMENT
@@ -984,15 +940,7 @@ Inventory levels healthy.
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
-
-        st.warning("""
-💡 தமிழ் விளக்கம்:
-
-'அதிக stock வைத்தால் cash block ஆகிவிடும்.'
-
-'குறைவான stock இருந்தால் sales miss ஆகும்.'
-""")
+   tamil_insight("inventory")
 
 # =========================================================
 # PRICING DECISION GAME
@@ -1053,15 +1001,8 @@ but volume risk exists.
         st.info("""
 Value-added strategy.
 """)
-
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் கருத்து:
-
-'Price குறைப்பது easy.
-ஆனால் profit maintain செய்வது தான் smart business.'
-""")
+tamil_insight("pricing")
+    
 
 # =========================================================
 # DEALER GROWTH SIMULATOR
@@ -1163,13 +1104,8 @@ elif menu == "Dealer Growth Simulator":
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
+    tamil_insight("growth")
 
-        st.success("""
-💡 தமிழ் கருத்து:
-
-'Technology + disciplined finance + strong team = long-term growth.'
-""")
 
 # =========================================================
 # WORKING CAPITAL TRACKER
@@ -1242,13 +1178,7 @@ elif menu == "Working Capital Tracker":
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் விளக்கம்:
-
-'Working capital தான் daily business operations-ஓட backbone.'
-""")
+    tamil_insight("workingcapital")
 
 # =========================================================
 # CUSTOMER PROFITABILITY
@@ -1315,13 +1245,7 @@ elif menu == "Customer Profitability":
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் கருத்து:
-
-'ஒவ்வொரு customer-உம் profitable ஆக இருக்க வேண்டியது அவசியம்.'
-""")
+   tamil_insight("customer")
 
 # =========================================================
 # BREAK-EVEN CALCULATOR
@@ -1385,17 +1309,9 @@ elif menu == "Break-even Calculator":
             fig,
             use_container_width=True
         )
+        tamil_insight("breakeven")
 
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் விளக்கம்:
-
-'Break-even point தெரிந்தால் business risk குறையும்.'
-
-'Sales எவ்வளவு வந்தால் loss இல்லாமல் இருக்கும் என்பதை இது காட்டும்.'
-""")
-
+   
 # =========================================================
 # DIGITAL TRANSFORMATION SCORE
 # =========================================================
@@ -1466,15 +1382,7 @@ elif menu == "Digital Transformation Score":
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
-
-        st.success("""
-💡 தமிழ் கருத்து:
-
-'Digital tools time-ஐயும் money-ஐயும் save செய்யும்.'
-
-'Technology பயன்படுத்தும் dealers future-ready ஆக இருப்பார்கள்.'
-""")
+    tamil_insight("digital")
 
 # =========================================================
 # NEXTGEN LEADERSHIP
@@ -1562,15 +1470,7 @@ elif menu == "NextGen Leadership":
         use_container_width=True
     )
 
-    if language == "English + தமிழ்":
-
-        st.info("""
-💡 தமிழ் சிந்தனை:
-
-'குடும்ப business-ஐ professional business-ஆக மாற்றுவது next generation பொறுப்பு.'
-
-'Leadership என்பது people + systems + discipline.'
-""")
+    tamil_insight("leadership")
 
 # =========================================================
 # BUSINESS DECISION CHALLENGE
@@ -1625,15 +1525,7 @@ Balanced business decision.
 Financially conservative approach.
 """)
 
-    if language == "English + தமிழ்":
-
-        st.warning("""
-💡 தமிழ் கருத்து:
-
-'Sales மட்டும் பார்க்காமல் risk-யும் evaluate செய்ய வேண்டும்.'
-
-'Smart dealer எப்போதும் cash flow-ஐ கவனிப்பார்.'
-""")
+    tamil_insight("decision")
 
 # =========================================================
 # ACTION PLAN GENERATOR
@@ -1684,15 +1576,7 @@ Digital Goal:
 Your personalized dealership improvement plan is ready.
 """)
 
-    if language == "English + தமிழ்":
-
-        st.success("""
-💡 தமிழ் Reflection:
-
-'அடுத்த 90 நாட்களில் உங்கள் business-ல் என்ன மாற்றப் போகிறீர்கள்?'
-
-'Small improvements create long-term growth.'
-""")
+    tamil_insight("actionplan")
 
 # =========================================================
 # FOOTER
