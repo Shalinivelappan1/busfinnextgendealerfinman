@@ -1,4 +1,3 @@
-```python
 # =========================================================
 # NEXTGEN DEALER FINANCE LAB
 # FULL STREAMLIT APP WITH TAMIL LEARNING SUPPORT
