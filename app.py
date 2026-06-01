@@ -1105,6 +1105,7 @@ elif menu == "Dealer Growth Simulator":
         fig,
         use_container_width=True
     )
+    """)
     tamil_insight("growth")
 
 # =========================================================
